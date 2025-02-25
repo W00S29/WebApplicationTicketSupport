@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplicationTicketSupport.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+</head>
+<body>
+    <form runat="server">
+    <div>
+        <h1>Gestión de Tickets</h1>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+   </form>
+</body>
+</html>
