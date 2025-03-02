@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c976a10c8b5d49b5a193548fbd4849c8" Name="Diagram1">
+        <EntityTypeShape EntityType="Soporte_V5Model.Historial_Tickets" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Soporte_V5Model.Soporte_Adjuntos" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Soporte_V5Model.Soporte_Especialidades" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Soporte_V5Model.Soporte_Roles" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Soporte_V5Model.Soporte_Tickets" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Soporte_V5Model.Soporte_Usuarios" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Soporte_V5Model.Soporte_EspecialidadesTecnicos" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Soporte_V5Model.FK__Soporte_A__id_ti__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="Soporte_V5Model.FK__Soporte_E__id_es__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="Soporte_V5Model.FK__Soporte_U__id_ro__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="Soporte_V5Model.FK__Soporte_T__id_us__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="Soporte_V5Model.FK__Soporte_E__id_us__5AEE82B9" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

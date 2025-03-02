@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
-using WebApplicationTicketSupport.Modelos;
 
 namespace WebApplicationTicketSupport
 {
@@ -14,56 +13,88 @@ namespace WebApplicationTicketSupport
     {
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = new Soporte_V5Entities1())
             {
-                if (db.Usuarios.Any(u => u.correo == txtCorreo.Text))
+                if (db.Soporte_Usuarios.Any(u => u.correo == txtCorreo.Text))
                 {
                     lblMensaje.Text = "El correo ya está registrado.";
                     return;
                 }
 
-                Usuario nuevoUsuario = new Usuario
+                int rolId = int.Parse(ddlRol.SelectedValue); // Obtener el id_rol seleccionado
+
+                Soporte_Usuarios nuevoUsuario = new Soporte_Usuarios
                 {
                     nombre = txtNombre.Text,
                     correo = txtCorreo.Text,
                     contraseña = HashPassword(txtContraseña.Text),
-                    rol = ddlRol.SelectedValue,
+                    id_rol = rolId, // Asignar el id_rol
                     fecha_registro = DateTime.Now,
                 };
 
-                db.Usuarios.Add(nuevoUsuario);
+                db.Soporte_Usuarios.Add(nuevoUsuario);
                 db.SaveChanges();
 
-               // lblMensaje.ForeColor = System.Drawing.Color.Green;
-                //lblMensaje.Text = "Usuario registrado con éxito.";
-
-                AsignarRol(nuevoUsuario.id_usuario, nuevoUsuario.rol, db);
+                // Manejar especialidades si el rol es Técnico
+                if (rolId == ObtenerIdRolTecnico(db)) // Reemplaza ObtenerIdRolTecnico con tu lógica
+                {
+                    GuardarEspecialidadesTecnico(nuevoUsuario.id_usuario, txtEspecialidad.Text, db);
+                }
 
                 lblMensaje.Text = "Registro exitoso.";
                 Response.Redirect("Login.aspx");
-
             }
         }
 
-
-        private void AsignarRol(int usuarioId, string rol, ApplicationDbContext db)
+        private void GuardarEspecialidadesTecnico(int usuarioId, string especialidades, Soporte_V5Entities1 db)
         {
-            if (rol == "Cliente")
+            if (string.IsNullOrEmpty(especialidades)) return; // No hacer nada si no hay especialidades
+
+            string[] especialidadesArray = especialidades.Split(',');
+
+            foreach (string especialidadNombre in especialidadesArray)
             {
-                db.Clientes.Add(new Clientes { id_usuario = usuarioId });
-            }
-            else if (rol == "Técnico")
-            {
-                db.Tecnicos.Add(new Tecnicos { id_usuario = usuarioId, especialidades = txtEspecialidad.Text });
-            }
-            else if (rol == "Administrador")
-            {
-                db.Administrador.Add(new Administrador { id_usuario = usuarioId });
+                string especialidadTrim = especialidadNombre.Trim();
+
+                // Verificar si la especialidad ya existe
+                Soporte_Especialidades especialidadExistente = db.Soporte_Especialidades.FirstOrDefault(e => e.descripcion == especialidadTrim);
+
+                int especialidadId;
+
+                if (especialidadExistente == null)
+                {
+                    // Crear nueva especialidad si no existe
+                    Soporte_Especialidades nuevaEspecialidad = new Soporte_Especialidades { descripcion = especialidadTrim };
+                    db.Soporte_Especialidades.Add(nuevaEspecialidad);
+                    db.SaveChanges();
+                    especialidadId = nuevaEspecialidad.id_especialidad;
+                }
+                else
+                {
+                    especialidadId = especialidadExistente.id_especialidad;
+                }
+
+                // Crear la relación en EspecialidadesTecnicos
+                Soporte_EspecialidadesTecnicos et = new Soporte_EspecialidadesTecnicos { id_usuario = usuarioId, id_especialidad = especialidadId };
+                db.Soporte_EspecialidadesTecnicos.Add(et);
             }
 
             db.SaveChanges();
         }
 
+        private int ObtenerIdRolTecnico(Soporte_V5Entities1 db)
+        {
+            //Debe obtener el id del rol de tecnico de la base de datos.
+            Soporte_Roles rolTecnico = db.Soporte_Roles.FirstOrDefault(r => r.nombre == "Tecnico"); //Asumiendo que el nombre del rol es "Tecnico"
+            if (rolTecnico != null)
+            {
+                return rolTecnico.id_rol;
+            }
+            else
+            {
+                throw new Exception("Rol Tecnico no encontrado.");
+            }
+        }
 
         private string HashPassword(string password)
         {
@@ -81,7 +112,8 @@ namespace WebApplicationTicketSupport
 
         protected void ddlRol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            panelEspecialidad.Visible = ddlRol.SelectedValue == "Técnico";
+            int rolId = int.Parse(ddlRol.SelectedValue);
+            panelEspecialidad.Visible = rolId == ObtenerIdRolTecnico(new Soporte_V5Entities1()); //Reemplazar por el contexto de la pagina.
         }
     }
 }

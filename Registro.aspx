@@ -16,9 +16,9 @@
 
     <asp:Label runat="server" Text="Rol:" AssociatedControlID="ddlRol" />
     <asp:DropDownList ID="ddlRol" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged" >
-        <asp:ListItem Text="Cliente" Value="Cliente" />
-        <asp:ListItem Text="Técnico" Value="Técnico" />
-        <asp:ListItem Text="Administrador" Value="Administrador" />
+        <asp:ListItem Text="Cliente" Value= "3" />
+        <asp:ListItem Text="Tecnico" Value= "2" />
+        <asp:ListItem Text="Administrador" Value= "1"/>
     </asp:DropDownList>
 
     <asp:Panel ID="panelEspecialidad" runat="server" Visible="false">

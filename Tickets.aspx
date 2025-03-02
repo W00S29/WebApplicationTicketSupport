@@ -36,4 +36,8 @@
             <asp:CommandField ShowEditButton="true" ShowDeleteButton="true" />
         </Columns>
     </asp:GridView>
+           <asp:Label ID="lblMensaje" runat="server" ForeColor="Red" />
+
+    
+
 </asp:Content>
