@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- Formulario para agregar nuevos tickets -->
-    <div>
+    <h1>Gestión de Tickets</h1>
+    <div class="ticket-form">
         <asp:Label runat="server" Text="Asunto:" />
         <asp:TextBox ID="txtAsunto" runat="server" />
         <asp:Label runat="server" Text="Descripción:" />
@@ -22,12 +22,12 @@
         <asp:Button ID="btnAgregar" runat="server" Text="Agregar Ticket" OnClick="btnAgregar_Click" />
     </div>
 
-    <asp:GridView ID="gvTickets" runat="server" AutoGenerateColumns="False" DataKeyNames="Id"
+    <asp:GridView ID="gvTickets" runat="server" AutoGenerateColumns="False" DataKeyNames="id_ticket"
         ShowHeaderWhenEmpty="True" AutoGenerateEditButton="true" OnRowEditing="gvTickets_RowEditing"
         OnRowCancelingEdit="gvTickets_RowCancelingEdit" OnRowUpdating="gvTickets_RowUpdating"
-        OnRowDeleting="gvTickets_RowDeleting">
+        OnRowDeleting="gvTickets_RowDeleting" CssClass="ticket-grid">
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" />
+            <asp:BoundField DataField="id_ticket" HeaderText="ID" ReadOnly="True" />
             <asp:BoundField DataField="Asunto" HeaderText="Asunto" />
             <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
             <asp:BoundField DataField="Prioridad" HeaderText="Prioridad" />

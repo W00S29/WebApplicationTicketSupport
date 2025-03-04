@@ -1,0 +1,79 @@
+﻿
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fafafa; /* Fondo gris claro */
+}
+
+.login-container {
+    background-color: white;
+    border: 1px solid #dbdbdb; /* Borde gris claro */
+    border-radius: 3px;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+}
+
+    .login-container h2 {
+        margin-bottom: 20px;
+        font-size: 1.75em;
+        font-weight: 600;
+        color: #262626;
+    }
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9em;
+        color: #262626;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        font-size: 1em;
+        box-sizing: border-box;
+    }
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6; /* Azul de Instagram */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+    .login-button:hover {
+        background-color: #1877f2; /* Azul más oscuro al pasar el ratón */
+    }
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.signup-link {
+    font-size: 0.9em;
+    color: #0095f6;
+    text-decoration: none;
+}
+
+    .signup-link:hover {
+        text-decoration: underline;
+    }
+
+

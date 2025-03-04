@@ -76,6 +76,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Estilos\Login.css" />
+    <Content Include="Estilos\Registro.css" />
+    <Content Include="Estilos\Tickets.css" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

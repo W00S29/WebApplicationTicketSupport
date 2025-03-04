@@ -122,11 +122,11 @@ namespace WebApplicationTicketSupport
                 {
                     GridViewRow row = gvTickets.Rows[e.RowIndex];
 
-                    ticket.asunto = (row.Cells[1].Controls[0] as TextBox).Text;
-                    ticket.descripcion = (row.Cells[2].Controls[0] as TextBox).Text;
-                    ticket.prioridad = (row.Cells[3].Controls[0] as TextBox).Text;
-                    ticket.categoria = (row.Cells[4].Controls[0] as TextBox).Text;
-                    ticket.estado = (row.Cells[5].Controls[0] as TextBox).Text;
+                    ticket.asunto = (row.Cells[2].Controls[0] as TextBox).Text;
+                    ticket.descripcion = (row.Cells[3].Controls[0] as TextBox).Text;
+                    ticket.prioridad = (row.Cells[4].Controls[0] as TextBox).Text;
+                    ticket.categoria = (row.Cells[5].Controls[0] as TextBox).Text;
+                    ticket.estado = (row.Cells[6].Controls[0] as TextBox).Text;
 
                     db.SaveChanges();
                 }

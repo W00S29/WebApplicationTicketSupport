@@ -1,0 +1,71 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fafafa;
+}
+
+.register-container {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+}
+
+    .register-container h2 {
+        margin-bottom: 20px;
+        font-size: 1.75em;
+        font-weight: 600;
+        color: #262626;
+    }
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9em;
+        color: #262626;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="password"],
+    .input-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        font-size: 1em;
+        box-sizing: border-box;
+    }
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+    .register-button:hover {
+        background-color: #1877f2;
+    }
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.specialty-panel {
+    margin-top: 15px;
+}
