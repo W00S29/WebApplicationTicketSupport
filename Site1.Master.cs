@@ -15,11 +15,13 @@ namespace WebApplicationTicketSupport
             {
                 // El usuario no ha iniciado sesión, ocultar el menú
                 menuDesplegable.Visible = false;
+                
             }
             else
             {
                 // El usuario ha iniciado sesión, mostrar el menú
                 menuDesplegable.Visible = true;
+                
             }
         }
     }

@@ -76,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDashboard.aspx" />
     <Content Include="Estilos\Login.css" />
     <Content Include="Estilos\Registro.css" />
     <Content Include="Estilos\Tickets.css" />
@@ -95,6 +96,13 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Historial_Tickets.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

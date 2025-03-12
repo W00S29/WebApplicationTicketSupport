@@ -26,6 +26,8 @@ namespace WebApplicationTicketSupport
                     Session["id_usuario"] = usuario.id_usuario;
                     Session["nombre"] = usuario.nombre;
                     Session["id_rol"] = usuario.id_rol; // Guardar el id_rol
+                   
+                  
 
                     // Obtener el nombre del rol desde la tabla Roles
                     Soporte_Roles rol = db.Soporte_Roles.FirstOrDefault(r => r.id_rol == usuario.id_rol);
@@ -41,7 +43,7 @@ namespace WebApplicationTicketSupport
                         return; // Detener el proceso de inicio de sesión
                     }
 
-                    Response.Redirect("Tickets.aspx"); // Redirigir después de procesar el rol
+                    Response.Redirect("AdminDashboard.aspx"); // Redirigir después de procesar el rol
                 }
                 else
                 {
