@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplicationTicketSupport.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Login
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link href="Estilos/Login.css" rel="stylesheet" />
   <div class="login-container">
         <h2>Iniciar Sesión</h2>
 

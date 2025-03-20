@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <link href="Estilos/Tickets.css" rel="stylesheet" />
     <h1>Gestión de Tickets</h1>
     <div class="ticket-form">
         <asp:Label runat="server" Text="Asunto:" />

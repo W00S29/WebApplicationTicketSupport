@@ -43,7 +43,7 @@ namespace WebApplicationTicketSupport
                         return; // Detener el proceso de inicio de sesión
                     }
 
-                    Response.Redirect("AdminDashboard.aspx"); // Redirigir después de procesar el rol
+                    Response.Redirect("Cliente.aspx"); // Redirigir después de procesar el rol
                 }
                 else
                 {

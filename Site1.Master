@@ -4,13 +4,41 @@
 <html>
 <head>
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-    <link href="Estilos/Tickets.css" rel="stylesheet" />
-    <link href="Estilos/Registro.css" rel="stylesheet" />
-    <link href="Estilos/Login.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Estilos para el contenedor fijo del dashboard */
+        .fixed-dashboard {
+            position: fixed;
+            top: 56px; /* Ajuste para que no se superponga con la navbar */
+            left: 0;
+            width: 200px; /* Ancho del dashboard */
+            height: calc(100vh - 56px); /* Altura restante de la ventana */
+            background-color: #f8f9fa; /* Color de fondo */
+            padding: 10px;
+        }
+
+        .fixed-dashboard a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .fixed-dashboard a:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Estilos para el contenido principal */
+        .main-content {
+            margin-left: 200px; /* Ajuste para el contenido principal */
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -21,23 +49,32 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown"  >
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav" runat="server" id="menuDesplegable">
-                    <li class="nav-item dropdown" >
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            Opciones
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           Cerrar Sesion
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Usuarios</a>
-                            <a class="dropdown-item" href="#">Historial</a>
-                            <a class="dropdown-item" href="#">Salir</a>
+                            <asp:LinkButton ID="lnkSalir" runat="server" CssClass="dropdown-item" OnClick="lnkSalir_Click">Salir</asp:LinkButton>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div>
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+       <div runat="server" id="SidebarPanel" class="fixed-dashboard">
+    <a href="Cliente.aspx">Home</a>
+    <a runat="server" id="AdminLink" href="AdminDashboard.aspx">Admin</a>
+    <a runat="server" id="UsuariosLink" href="Usuarios.aspx">Usuarios</a>
+    <a runat="server" id="TecnicosLink" href="Tecnico.aspx">Técnicos</a>
+    <a runat="server" id="HistorialLink" href="Historial.aspx">Historial</a>
+    <asp:LinkButton ID="lnkSalirSidebar" runat="server" OnClick="lnkSalir_Click">Salir</asp:LinkButton>
+</div>
+
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
     </form>
 </body>

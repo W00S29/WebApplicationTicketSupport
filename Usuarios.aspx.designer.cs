@@ -11,61 +11,52 @@ namespace WebApplicationTicketSupport
 {
 
 
-    public partial class AdminDashboard
+    public partial class Usuarios
     {
 
         /// <summary>
-        /// lblAbiertos control.
+        /// lblAdministradores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAbiertos;
+        protected global::System.Web.UI.WebControls.Label lblAdministradores;
 
         /// <summary>
-        /// lblEnProgreso control.
+        /// lblTecnicos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEnProgreso;
+        protected global::System.Web.UI.WebControls.Label lblTecnicos;
 
         /// <summary>
-        /// lblResueltos control.
+        /// lblClientes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResueltos;
+        protected global::System.Web.UI.WebControls.Label lblClientes;
 
         /// <summary>
-        /// lblCerrados control.
+        /// btnAmarillo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCerrados;
+        protected global::System.Web.UI.WebControls.Button btnAmarillo;
 
         /// <summary>
-        /// gvTickets control.
+        /// gvUsuarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTickets;
-
-        /// <summary>
-        /// lblMensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        protected global::System.Web.UI.WebControls.GridView gvUsuarios;
     }
 }

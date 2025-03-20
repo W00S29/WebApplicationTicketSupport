@@ -1,11 +1,11 @@
 ﻿
-body {
+/*body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fafafa; /* Fondo gris claro */
-}
+    background-color: #fafafa;  Fondo gris claro
+} */
 
 .login-container {
     background-color: white;

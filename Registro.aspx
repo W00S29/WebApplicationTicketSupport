@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+     <link href="Estilos/Registro.css" rel="stylesheet" />
     <div class="register-container">
         <h2>Registro de Usuario</h2>
 
@@ -25,8 +25,7 @@
             <asp:Label runat="server" Text="Rol:" AssociatedControlID="ddlRol" />
             <asp:DropDownList ID="ddlRol" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
                 <asp:ListItem Text="Cliente" Value="3" />
-                <asp:ListItem Text="Tecnico" Value="2" />
-                <asp:ListItem Text="Administrador" Value="1" />
+                
             </asp:DropDownList>
         </div>
 

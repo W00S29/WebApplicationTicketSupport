@@ -24,5 +24,6 @@ namespace WebApplicationTicketSupport
         public string estado { get; set; }
         public Nullable<System.DateTime> fecha_creacion { get; set; }
         public Nullable<System.DateTime> fecha_cierre { get; set; }
+        public Nullable<int> id_tecnico { get; set; }
     }
 }

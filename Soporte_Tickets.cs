@@ -29,6 +29,7 @@ namespace WebApplicationTicketSupport
         public string estado { get; set; }
         public Nullable<System.DateTime> fecha_creacion { get; set; }
         public Nullable<System.DateTime> fecha_cierre { get; set; }
+        public Nullable<int> id_tecnico { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Soporte_Adjuntos> Soporte_Adjuntos { get; set; }

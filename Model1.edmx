@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Soporte_V5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Soporte_V5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Historial_Tickets">
           <Key>
             <PropertyRef Name="id_historial" />
@@ -19,6 +19,7 @@
           <Property Name="estado" Type="nvarchar" MaxLength="50" />
           <Property Name="fecha_creacion" Type="datetime" />
           <Property Name="fecha_cierre" Type="datetime" />
+          <Property Name="id_tecnico" Type="int" />
         </EntityType>
         <EntityType Name="Soporte_Adjuntos">
           <Key>
@@ -70,6 +71,7 @@ warning 6002: The table/view 'Soporte_V5.dbo.Soporte_EspecialidadesTecnicos' doe
           <Property Name="estado" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fecha_creacion" Type="datetime" />
           <Property Name="fecha_cierre" Type="datetime" />
+          <Property Name="id_tecnico" Type="int" />
         </EntityType>
         <EntityType Name="Soporte_Usuarios">
           <Key>
@@ -179,8 +181,7 @@ warning 6002: The table/view 'Soporte_V5.dbo.Soporte_EspecialidadesTecnicos' doe
             <End Role="Soporte_Usuarios" EntitySet="Soporte_Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Soporte_V5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -198,6 +199,7 @@ warning 6002: The table/view 'Soporte_V5.dbo.Soporte_EspecialidadesTecnicos' doe
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
           <Property Name="fecha_cierre" Type="DateTime" Precision="3" />
+          <Property Name="id_tecnico" Type="Int32" />
         </EntityType>
         <EntityType Name="Soporte_Adjuntos">
           <Key>
@@ -242,6 +244,7 @@ warning 6002: The table/view 'Soporte_V5.dbo.Soporte_EspecialidadesTecnicos' doe
           <Property Name="fecha_cierre" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Soporte_Adjuntos" Relationship="Self.FK__Soporte_A__id_ti__68487DD7" FromRole="Soporte_Tickets" ToRole="Soporte_Adjuntos" />
           <NavigationProperty Name="Soporte_Usuarios" Relationship="Self.FK__Soporte_T__id_us__619B8048" FromRole="Soporte_Tickets" ToRole="Soporte_Usuarios" />
+          <Property Name="id_tecnico" Type="Int32" />
         </EntityType>
         <EntityType Name="Soporte_Usuarios">
           <Key>
@@ -369,6 +372,7 @@ warning 6002: The table/view 'Soporte_V5.dbo.Soporte_EspecialidadesTecnicos' doe
           <EntitySetMapping Name="Historial_Tickets">
             <EntityTypeMapping TypeName="Soporte_V5Model.Historial_Tickets">
               <MappingFragment StoreEntitySet="Historial_Tickets">
+                <ScalarProperty Name="id_tecnico" ColumnName="id_tecnico" />
                 <ScalarProperty Name="id_historial" ColumnName="id_historial" />
                 <ScalarProperty Name="id_ticket" ColumnName="id_ticket" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
@@ -413,6 +417,7 @@ warning 6002: The table/view 'Soporte_V5.dbo.Soporte_EspecialidadesTecnicos' doe
           <EntitySetMapping Name="Soporte_Tickets">
             <EntityTypeMapping TypeName="Soporte_V5Model.Soporte_Tickets">
               <MappingFragment StoreEntitySet="Soporte_Tickets">
+                <ScalarProperty Name="id_tecnico" ColumnName="id_tecnico" />
                 <ScalarProperty Name="id_ticket" ColumnName="id_ticket" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="asunto" ColumnName="asunto" />

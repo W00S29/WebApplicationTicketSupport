@@ -48,7 +48,26 @@
                 </div>
             </div>
         </div>
-    </div>
-   
+        <div>
+              <asp:GridView ID="gvTickets" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" DataKeyNames="id_Ticket" OnRowCommand="gvTickets_RowCommand">
+    <Columns>
+        <asp:BoundField DataField="id_Ticket" HeaderText="ID" ReadOnly="True" />
+        <asp:BoundField DataField="asunto" HeaderText="Asunto" />
+        <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
+        <asp:BoundField DataField="prioridad" HeaderText="Prioridad" />
+        <asp:BoundField DataField="categoria" HeaderText="Categoría" />
+        <asp:BoundField DataField="estado" HeaderText="Estado" />
+        <asp:TemplateField HeaderText="Técnico">
+            <ItemTemplate>
+                <asp:DropDownList ID="ddlTecnicos" runat="server" CssClass="form-control"></asp:DropDownList>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:ButtonField CommandName="Asignar" Text="Asignar" />
+    </Columns>
+</asp:GridView>
+        <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="mt-3"></asp:Label>
+        </div>
 
+
+    </div>
 </asp:Content>
