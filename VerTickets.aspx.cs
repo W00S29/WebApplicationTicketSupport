@@ -21,17 +21,17 @@ namespace WebApplicationTicketSupport
             if (rol == "Cliente")
             {
                 gvTickets.Columns[6].Visible = false; // Ocultar columna de estado para clientes
-                gvTickets.Columns[9].Visible = true; // Ocultar columna de eliminar para clientes
+                gvTickets.Columns[8].Visible = true; // Ocultar columna de eliminar para clientes
             }
             else if (rol == "Tecnico" || rol == "Administrador")
             {
                 gvTickets.Columns[6].Visible = true; // Mostrar columna de estado para técnicos y administradores
-                gvTickets.Columns[9].Visible = true; // Mostrar columna de eliminar para técnicos y administradores
+                gvTickets.Columns[8].Visible = true; // Mostrar columna de eliminar para técnicos y administradores
             }
             else
             {
                 gvTickets.Columns[6].Visible = false;
-                gvTickets.Columns[9].Visible = false;
+                gvTickets.Columns[8].Visible = false;
             }
         }
 

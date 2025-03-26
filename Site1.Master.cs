@@ -58,8 +58,11 @@ namespace WebApplicationTicketSupport
             else if (rolUsuario == "Tecnico")
             { 
               AdminLink.Visible= false;
+              adminicon.Visible= false;
               UsuariosLink.Visible= false;
-              HistorialLink.Visible = false;  
+              usericon.Visible= false;
+              HistorialLink.Visible = false;
+              histoicon.Visible = false;  
             
             }
             else

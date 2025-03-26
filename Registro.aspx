@@ -7,23 +7,27 @@
         <h2>Registro de Usuario</h2>
 
         <div class="input-group">
-            <asp:Label runat="server" Text="Nombre:" AssociatedControlID="txtNombre" />
-            <asp:TextBox ID="txtNombre" runat="server" />
+           
+            <asp:TextBox ID="txtNombre" runat="server"  placeholder="Nombre"/>
         </div>
 
         <div class="input-group">
-            <asp:Label runat="server" Text="Correo:" AssociatedControlID="txtCorreo" />
-            <asp:TextBox ID="txtCorreo" runat="server" />
+           
+            <asp:TextBox ID="txtCorreo" runat="server"  placeholder="Correo"/>
         </div>
 
         <div class="input-group">
-            <asp:Label runat="server" Text="Contraseña:" AssociatedControlID="txtContraseña" />
-            <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" />
+            
+            <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" placeholder="Contraseña" />
+        </div>
+        <div class="input-group">
+           
+             <asp:TextBox ID="txtConfirmarContraseña" runat="server" TextMode="Password" placeholder="Confirmar Contraseña" />
         </div>
 
         <div class="input-group">
-            <asp:Label runat="server" Text="Rol:" AssociatedControlID="ddlRol" />
-            <asp:DropDownList ID="ddlRol" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
+           <%-- <asp:Label runat="server" Text="Rol:" AssociatedControlID="ddlRol" />--%>
+            <asp:DropDownList ID="ddlRol" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged" Visible="false">
                 <asp:ListItem Text="Cliente" Value="3" />
                 
             </asp:DropDownList>
@@ -37,7 +41,8 @@
         </asp:Panel>
 
         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" CssClass="register-button" />
-        <asp:Label ID="lblMensaje" runat="server" CssClass="error-message" />
+         <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" CssClass="btn btn-dark" />
+       <div> <asp:Label ID="lblMensaje" runat="server" CssClass="error-message" /></div>
     </div>
 
 </asp:Content>

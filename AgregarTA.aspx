@@ -7,18 +7,18 @@
     <h2>Registro de Usuario</h2>
 
     <div class="input-group">
-        <asp:Label runat="server" Text="Nombre:" AssociatedControlID="txtNombre" />
-        <asp:TextBox ID="txtNombre" runat="server" />
+        
+        <asp:TextBox ID="txtNombre" runat="server"  placeholder="Nombre"/>
     </div>
 
     <div class="input-group">
-        <asp:Label runat="server" Text="Correo:" AssociatedControlID="txtCorreo" />
-        <asp:TextBox ID="txtCorreo" runat="server" />
+       
+        <asp:TextBox ID="txtCorreo" runat="server" placeholder="Correo"/>
     </div>
 
     <div class="input-group">
-        <asp:Label runat="server" Text="Contraseña:" AssociatedControlID="txtContraseña" />
-        <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" />
+        
+        <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" placeholder="Contraseña" />
     </div>
 
     <div class="input-group">
@@ -31,14 +31,14 @@
         </asp:DropDownList>
     </div>
 
-    <asp:Panel ID="panelEspecialidad" runat="server" Visible="false" CssClass="specialty-panel">
+   <%-- <asp:Panel ID="panelEspecialidad" runat="server" Visible="false" CssClass="specialty-panel">
         <div class="input-group">
             <asp:Label runat="server" Text="Especialidad:" AssociatedControlID="txtEspecialidad" />
             <asp:TextBox ID="txtEspecialidad" runat="server" />
         </div>
-    </asp:Panel>
+    </asp:Panel>--%>
 
     <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" CssClass="register-button" />
-    <asp:Label ID="lblMensaje" runat="server" CssClass="error-message" />
+    <div><asp:Label ID="lblMensaje" runat="server" CssClass="error-message" /></div>
 </div>
 </asp:Content>

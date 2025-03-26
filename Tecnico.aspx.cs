@@ -107,6 +107,15 @@ namespace WebApplicationTicketSupport
                     ticket.categoria = categoria;
                     ticket.estado = estado;
                     
+                    if (ticket.estado == "cerrado" || ticket.estado == "resuelto")
+                    {
+                        ticket.fecha_cierre = DateTime.Now;
+                    }
+                    else
+                    {
+                        ticket.fecha_cierre = null; // Si el estado no es "cerrado" o "resuelto", establece la fecha de cierre en null
+                    }
+
                     db.SaveChanges();
                     Response.Redirect("Tecnico.aspx");
                 }

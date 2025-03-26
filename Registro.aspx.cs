@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web.Configuration;
 
 namespace WebApplicationTicketSupport
 {
@@ -13,37 +14,48 @@ namespace WebApplicationTicketSupport
     {
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            using (var db = new Soporte_V5Entities1())
-            {
-                if (db.Soporte_Usuarios.Any(u => u.correo == txtCorreo.Text))
+            if (txtContraseña.Text == txtConfirmarContraseña.Text) {
+
+                string contraseña = txtContraseña.Text;
+
+                using (var db = new Soporte_V5Entities1())
                 {
-                    lblMensaje.Text = "El correo ya está registrado.";
-                    return;
+                    if (db.Soporte_Usuarios.Any(u => u.correo == txtCorreo.Text))
+                    {
+                        lblMensaje.Text = "El correo ya está registrado.";
+                        return;
+                    }
+
+                    int rolId = int.Parse(ddlRol.SelectedValue); // Obtener el id_rol seleccionado
+
+                    Soporte_Usuarios nuevoUsuario = new Soporte_Usuarios
+                    {
+                        nombre = txtNombre.Text,
+                        correo = txtCorreo.Text,
+                        contraseña = HashPassword(txtContraseña.Text),
+                        id_rol = rolId, // Asignar el id_rol
+                        fecha_registro = DateTime.Now,
+                    };
+
+                    db.Soporte_Usuarios.Add(nuevoUsuario);
+                    db.SaveChanges();
+
+                    // Manejar especialidades si el rol es Técnico
+                    if (rolId == ObtenerIdRolTecnico(db)) // Reemplaza ObtenerIdRolTecnico con tu lógica
+                    {
+                        GuardarEspecialidadesTecnico(nuevoUsuario.id_usuario, txtEspecialidad.Text, db);
+                    }
+
+                    lblMensaje.Text = "Registro exitoso.";
+                    Response.Redirect("Login.aspx");
                 }
-
-                int rolId = int.Parse(ddlRol.SelectedValue); // Obtener el id_rol seleccionado
-
-                Soporte_Usuarios nuevoUsuario = new Soporte_Usuarios
-                {
-                    nombre = txtNombre.Text,
-                    correo = txtCorreo.Text,
-                    contraseña = HashPassword(txtContraseña.Text),
-                    id_rol = rolId, // Asignar el id_rol
-                    fecha_registro = DateTime.Now,
-                };
-
-                db.Soporte_Usuarios.Add(nuevoUsuario);
-                db.SaveChanges();
-
-                // Manejar especialidades si el rol es Técnico
-                if (rolId == ObtenerIdRolTecnico(db)) // Reemplaza ObtenerIdRolTecnico con tu lógica
-                {
-                    GuardarEspecialidadesTecnico(nuevoUsuario.id_usuario, txtEspecialidad.Text, db);
-                }
-
-                lblMensaje.Text = "Registro exitoso.";
-                Response.Redirect("Login.aspx");
             }
+            else
+            {
+                lblMensaje.Text = "Las contraseñas no coinciden.";
+            }
+
+
         }
 
         private void GuardarEspecialidadesTecnico(int usuarioId, string especialidades, Soporte_V5Entities1 db)
@@ -114,6 +126,11 @@ namespace WebApplicationTicketSupport
         {
             int rolId = int.Parse(ddlRol.SelectedValue);
             panelEspecialidad.Visible = rolId == ObtenerIdRolTecnico(new Soporte_V5Entities1()); //Reemplazar por el contexto de la pagina.
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

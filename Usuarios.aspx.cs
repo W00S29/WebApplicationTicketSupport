@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace WebApplicationTicketSupport
 {
@@ -43,5 +44,44 @@ namespace WebApplicationTicketSupport
         {
             Response.Redirect("AgregarTA.aspx");
         }
+
+        protected void gvUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "EliminarUsuario")
+            {
+                int idUsuario = Convert.ToInt32(e.CommandArgument);
+
+                // Lógica para eliminar el usuario de la base de datos
+                EliminarUsuario(idUsuario);
+
+                // Recargar el GridView
+                CargarUsuarios();
+            }
+            else if (e.CommandName == "ActualizarUsuario")
+            {
+                int idUsuario = Convert.ToInt32(e.CommandArgument);
+                //Aquí puedes redirigir a una página de edición, o hacer que el GridView sea editable.
+                //Ejemplo de redirección.
+                Response.Redirect($"ActualizarUsuarios.aspx?id={idUsuario}");
+            }
+        }
+
+        private void EliminarUsuario(int idUsuario)
+        {
+            using (var db = new Soporte_V5Entities1())
+            {
+                Soporte_Usuarios usuario = db.Soporte_Usuarios.Find(idUsuario);
+
+                if (usuario != null)
+                {
+                    db.Soporte_Usuarios.Remove(usuario);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        
+
+
     }
 }

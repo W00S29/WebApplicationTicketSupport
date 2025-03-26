@@ -60,6 +60,42 @@ namespace WebApplicationTicketSupport
         protected global::System.Web.UI.WebControls.GridView gvTickets;
 
         /// <summary>
+        /// TicketsAbierto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView TicketsAbierto;
+
+        /// <summary>
+        /// TicketsEnprogreso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView TicketsEnprogreso;
+
+        /// <summary>
+        /// TicketsResuelto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView TicketsResuelto;
+
+        /// <summary>
+        /// TicketsCerrado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView TicketsCerrado;
+
+        /// <summary>
         /// lblMensaje control.
         /// </summary>
         /// <remarks>

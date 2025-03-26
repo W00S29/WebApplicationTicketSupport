@@ -76,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizarUsuarios.aspx" />
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AgregarTA.aspx" />
     <Content Include="AgregarTickets.aspx" />
@@ -84,6 +85,14 @@
     <Content Include="Estilos\Registro.css" />
     <Content Include="Estilos\Tickets.css" />
     <Content Include="Historial.aspx" />
+    <Content Include="Imagenes\Close V2.png" />
+    <Content Include="Imagenes\home.png" />
+    <Content Include="Imagenes\Management.png" />
+    <Content Include="Imagenes\note.png" />
+    <Content Include="Imagenes\Service V2.png" />
+    <Content Include="Imagenes\soporte.jpg" />
+    <Content Include="Imagenes\Star V3 %281%29.png" />
+    <Content Include="Imagenes\User V4.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -103,6 +112,13 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarUsuarios.aspx.cs">
+      <DependentUpon>ActualizarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarUsuarios.aspx.designer.cs">
+      <DependentUpon>ActualizarUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.aspx.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

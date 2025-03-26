@@ -51,6 +51,15 @@ namespace WebApplicationTicketSupport
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl SidebarPanel;
 
         /// <summary>
+        /// adminicon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adminicon;
+
+        /// <summary>
         /// AdminLink control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace WebApplicationTicketSupport
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor AdminLink;
+
+        /// <summary>
+        /// usericon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usericon;
 
         /// <summary>
         /// UsuariosLink control.
@@ -76,6 +94,15 @@ namespace WebApplicationTicketSupport
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor TecnicosLink;
+
+        /// <summary>
+        /// histoicon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl histoicon;
 
         /// <summary>
         /// HistorialLink control.

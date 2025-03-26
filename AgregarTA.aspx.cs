@@ -35,11 +35,11 @@ namespace WebApplicationTicketSupport
                 db.Soporte_Usuarios.Add(nuevoUsuario);
                 db.SaveChanges();
 
-                // Manejar especialidades si el rol es Técnico
-                if (rolId == ObtenerIdRolTecnico(db)) // Reemplaza ObtenerIdRolTecnico con tu lógica
-                {
-                    GuardarEspecialidadesTecnico(nuevoUsuario.id_usuario, txtEspecialidad.Text, db);
-                }
+                //Manejar especialidades si el rol es Técnico
+                //if (rolId == ObtenerIdRolTecnico(db)) // Reemplaza ObtenerIdRolTecnico con tu lógica
+                //{
+                //    GuardarEspecialidadesTecnico(nuevoUsuario.id_usuario, txtEspecialidad.Text, db);
+                //}
 
                 lblMensaje.Text = "Registro exitoso.";
                 Response.Redirect("Usuarios.aspx");
@@ -113,7 +113,7 @@ namespace WebApplicationTicketSupport
         protected void ddlRol_SelectedIndexChanged(object sender, EventArgs e)
         {
             int rolId = int.Parse(ddlRol.SelectedValue);
-            panelEspecialidad.Visible = rolId == ObtenerIdRolTecnico(new Soporte_V5Entities1()); //Reemplazar por el contexto de la pagina.
+            //panelEspecialidad.Visible = rolId == ObtenerIdRolTecnico(new Soporte_V5Entities1()); //Reemplazar por el contexto de la pagina.
         }
     }
 }

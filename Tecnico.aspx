@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-   <div class="container mt-5">
+ <div class="asignados">  
+    <div class="container mt-5">
     <h2>Mis Tickets Asignados</h2>
-    <asp:GridView ID="gvTicketsAsignados" runat="server" AutoGenerateColumns="False" CssClass="table table-striped"
-        DataKeyNames="id_ticket" AutoGenerateEditButton="true" OnRowEditing="gvTicketsAsignados_RowEditing"
+    <asp:GridView ID="gvTicketsAsignados" class="asignados" runat="server" AutoGenerateColumns="False" CssClass="table table-striped"
+        DataKeyNames="id_ticket" OnRowEditing="gvTicketsAsignados_RowEditing"
         OnRowCancelingEdit="gvTicketsAsignados_RowCancelingEdit" OnRowUpdating="gvTicketsAsignados_RowUpdating"
         OnRowDeleting="gvTicketsAsignados_RowDeleting">
         <Columns>
@@ -61,10 +62,11 @@
                 </EditItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="fecha_creacion" HeaderText="Fecha Creación" DataFormatString="{0:g}" ReadOnly="true" />
-            <asp:BoundField DataField="fecha_cierre" HeaderText="Fecha Cierre" DataFormatString="{0:g}" ReadOnly="true" />
+           
             <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
     <asp:Label ID="lblMensaje" runat="server" ForeColor="Red" />
+  </div>
 </div>
 </asp:Content>

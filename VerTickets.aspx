@@ -14,7 +14,6 @@
                 <asp:BoundField DataField="categoria" HeaderText="Categoría" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
                 <asp:BoundField DataField="fecha_creacion" HeaderText="Fecha Creación" DataFormatString="{0:g}" />
-                <asp:BoundField DataField="fecha_cierre" HeaderText="Fecha Cierre" DataFormatString="{0:g}" />
                 <asp:ButtonField CommandName="Eliminar" Text="Eliminar" />
             </Columns>
         </asp:GridView>

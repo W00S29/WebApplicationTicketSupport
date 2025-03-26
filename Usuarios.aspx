@@ -33,22 +33,32 @@
         </div>
      </div>
      
-      <div>
+      <div class="btnamarillo">
           <asp:Button ID="btnAmarillo" runat="server" Text="Agregar Usuario" CssClass="btn btn-warning" OnClick="btnAmarillo_Click" />
      </div>
-         
-
-    
-
+        
     <div class="container mt-5">
-        <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" DataKeyNames="id_usuario">
+        <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" DataKeyNames="id_usuario" OnRowCommand="gvUsuarios_RowCommand">
             <Columns>
                 <asp:BoundField DataField="id_usuario" HeaderText="ID" ReadOnly="True" />
                 <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="correo" HeaderText="Usuario" />
+                <asp:TemplateField HeaderText="Contraseña">
+                  <ItemTemplate>
+                      <i class="bi bi-lock-fill"></i>
+                   </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="id_rol" HeaderText="Rol ID" />
                 <asp:BoundField DataField="fecha_registro" HeaderText="Fecha de registro" />
+                <asp:TemplateField HeaderText="Acciones">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lnkEliminar" runat="server" CommandName="EliminarUsuario" CommandArgument='<%# Eval("id_usuario") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro que desea eliminar este usuario?');" />
+                        <asp:LinkButton ID="lnkActualizar" runat="server" CommandName="ActualizarUsuario" CommandArgument='<%# Eval("id_usuario") %>' Text="Actualizar" CssClass="btn btn-primary btn-sm" />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
     </div>
 </asp:Content>
+
+

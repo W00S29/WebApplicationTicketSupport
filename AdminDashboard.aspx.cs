@@ -15,6 +15,10 @@ namespace WebApplicationTicketSupport
             {
                 CargarDatos();
                 CargarTicketsSinAsignar();
+                CargarTicketsAbierto();
+                CargarTicketsEnprogrso();
+                CargarTicketsResuelto();
+                CargarTicketsCerrado();
 
 
 
@@ -31,6 +35,61 @@ namespace WebApplicationTicketSupport
                 lblCerrados.Text = db.Soporte_Tickets.Count(t => t.estado == "Cerrado").ToString();
             }
         }
+
+        private void CargarTicketsEnprogrso()
+        {
+            using (var db = new Soporte_V5Entities1())
+            {
+                var tickets = db.Soporte_Tickets
+                    .Where(t => t.estado == "En Progreso")
+                    .ToList();
+
+                TicketsEnprogreso.DataSource = tickets;
+                TicketsEnprogreso.DataBind();
+            }
+        }
+
+        private void CargarTicketsResuelto()
+        {
+            using (var db = new Soporte_V5Entities1())
+            {
+                var tickets = db.Soporte_Tickets
+                    .Where(t => t.estado == "resuelto")
+                    .ToList();
+
+                TicketsResuelto.DataSource = tickets;
+                TicketsResuelto.DataBind();
+            }
+        }
+
+        private void CargarTicketsCerrado()
+        {
+            using (var db = new Soporte_V5Entities1())
+            {
+                var tickets = db.Soporte_Tickets
+                    .Where(t => t.estado == "cerrado")
+                    .ToList();
+
+                TicketsCerrado.DataSource = tickets;
+                TicketsCerrado.DataBind();
+            }
+        }
+
+        private void CargarTicketsAbierto()
+        {
+            using (var db = new Soporte_V5Entities1())
+            {
+                var tickets = db.Soporte_Tickets
+                    .Where(t => t.estado == "abierto")
+                    .ToList();
+
+                TicketsAbierto.DataSource = tickets;
+                TicketsAbierto.DataBind();
+            }
+        }
+
+
+
 
 
 
