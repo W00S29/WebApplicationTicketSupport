@@ -3,12 +3,10 @@
     Login
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
     <link href="Estilos/Login.css" rel="stylesheet" />
-   
+
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
-
         <div class="input-group">
             <asp:TextBox ID="txtCorreo" runat="server" placeholder="Correo"/>
         </div>

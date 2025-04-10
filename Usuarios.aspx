@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="WebApplicationTicketSupport.Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Usuarios
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <h1>Panel de Administración</h1>

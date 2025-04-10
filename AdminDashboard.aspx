@@ -1,12 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="WebApplicationTicketSupport.AdminDashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-
-       <style>
-        .ticket-status p {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-    </style>
+    Administrador
+      
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

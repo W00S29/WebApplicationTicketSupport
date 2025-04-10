@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Tecnico.aspx.cs" Inherits="WebApplicationTicketSupport.Tecnico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Tecnico
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
  <div class="asignados">  

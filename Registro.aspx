@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="WebApplicationTicketSupport.Registro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Registro
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <link href="Estilos/Registro.css" rel="stylesheet" />

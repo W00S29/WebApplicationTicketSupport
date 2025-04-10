@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Cliente.aspx.cs" Inherits="WebApplicationTicketSupport.Cliente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    Home
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="jumbotron text-center bg-light">
+    <h1 class="display-4">¡Bienvenido al Sistema de Soporte!</h1>
+    <p class="lead">Aquí puedes crear y gestionar tus tickets de soporte de manera eficiente.</p>
+    <hr class="my-4">
+    <p>Para empezar, te recomendamos explorar las siguientes opciones:</p>
+</div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">

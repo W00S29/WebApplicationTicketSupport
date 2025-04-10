@@ -4,7 +4,8 @@
 <html>
 <head>
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -90,6 +91,12 @@
         .btnamarillo{
             padding-top:10px;
         }
+        
+        .ticket-status p {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
 
     </style>
 </head>
@@ -126,7 +133,7 @@
         <div runat="server" id="histoicon" class="divimg"> <img   class="Favicon" src="Imagenes/note.png" />  <a runat="server" id="HistorialLink" href="Historial.aspx">Historial</a></div>
    <div class="divimg"><img class="Favicon" src="Imagenes/Close%20V2.png" /> <asp:LinkButton ID="lnkSalirSidebar" runat="server" OnClick="lnkSalir_Click">Salir</asp:LinkButton>
 </div></div>
-        <div class="fondo-sesion"></div>
+       
         <div class="main-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
